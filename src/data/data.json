@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Cerveza Budweiser",
+        "price": 1500,
+        "category": "bebidas",
+        "subCategory": "cervezas",
+        "img": "./src/assets/bebidas/cerveza-budweiser.webp"
+    },
+    {
+        "id": 2,
+        "name": "Cerveza Cordoba",
+        "price": 1300,
+        "category": "bebidas",
+        "subCategory": "cervezas",
+        "img": "./src/assets/bebidas/cerveza-cordoba.webp"
+    },
+    {
+        "id": 3,
+        "name": "Coca-Cola 1.5L No retornable",
+        "price": 1500,
+        "category": "bebidas",
+        "subCategory": "gaseosas",
+        "img": "./src/assets/bebidas/coca-1.5l.webp"
+    },
+    {
+        "id": 4,
+        "name": "Coca-Cola 2L Retornable",
+        "price": 1800,
+        "category": "bebidas",
+        "subCategory": "gaseosas",
+        "img": "./src/assets/bebidas/coca-2l-retornable.webp"
+    },
+    {
+        "id": 5,
+        "name": "Paleta 4KG",
+        "price": 1500,
+        "category": "fiambres",
+        "subCategory": "paletas",
+        "img": "./src/assets/bebidas/paleta-4kg.webp"
+    },
+    {
+        "id": 6,
+        "name": "Queso cremoso 4KG",
+        "price": 1500,
+        "category": "fiambres",
+        "subCategory": "quesos",
+        "img": "./src/assets/bebidas/quesocremoso-4kg.webp"
+    }
+
+]
