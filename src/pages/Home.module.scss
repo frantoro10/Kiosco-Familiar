@@ -1,0 +1,21 @@
+
+
+.brand-container {
+    background-color: black;
+    color: rgb(77, 172, 255);
+    font-size: 2em !important;
+    img {
+        width: 8%;
+    }
+}
+
+.calculator-container {
+    cursor: pointer;
+    width: 5%;
+    position: absolute;
+    right: 2em;
+}
+
+// .filter-container {
+//    border-left: 2px solid red !important;
+// }

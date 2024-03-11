@@ -1,0 +1,89 @@
+.card-container {
+    width: 30% !important;
+    border: 0.5px solid rgb(131, 128, 128);
+    font-size: 1.1em ;
+    border-radius: 1.1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    
+    
+}
+
+.card-img {
+    border-bottom: 0.5px solid rgb(215, 210, 210);
+    width: 100%;
+    background-color: white;
+    img {
+        width: 100%;
+        height: 20vh;
+        object-fit: contain;
+    }
+
+}
+
+.card-info {
+    margin-left: 1em;
+    span{
+        font-size: 1.3em;
+       
+        // Letra precio
+        // &:nth-child(2){
+        //     font-weight: 500;
+        //     span {
+        //         color: white
+        //     }
+        // }
+        &:nth-child(3){
+            font-size: 1em;
+            font-weight: 300;
+        }
+    }
+    
+
+}
+
+@media (min-width: 1000px) and (max-width: 1400px ) {
+    .card-name {
+        // border: 2px solid red;
+        min-height: 5vh;
+        max-height: 5vh;
+    }
+
+}
+.price-container {
+    margin-top: 1em;
+}
+
+.price-box {
+    display: flex;
+    justify-content: center;
+    padding: 0.2em;
+    border-radius: 0.5em;
+    // border: 2px solid red;
+    color: white;
+    min-width: 13vw;
+    max-width: 13vw !important;
+    font-size: 1.4em;
+    font-weight: 500;
+    // border: 2px solid red;
+    background-color: rgb(36, 126, 204); 
+    cursor: pointer;
+}
+
+.cost-container {
+    
+    font-weight: 300 !important;
+    font-size: 0.8em;
+}
+
+.changep-button {
+    text-align: center;
+    color: white;
+    background-color: rgb(36, 126, 204); 
+    border: 1px solid rgb(104, 103, 103);
+    cursor: pointer;
+}
