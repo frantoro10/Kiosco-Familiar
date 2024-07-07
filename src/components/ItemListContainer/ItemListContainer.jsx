@@ -7,23 +7,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './ItemListContainer.module.scss';
 
 const ItemListContainer = ({ productsData }) => {
-  const { cartProducts, setCartProducts, selectedCount } = useContext(ProductsContext);
+  const { cartProducts, setCartProducts } = useContext(ProductsContext);
   const [newPrices, setNewPrices] = useState({});
   const [showChangePrice, setShowChangePrice] = useState({});
   const [newCostPrices, setNewCostPrices] = useState({});
   const [showCostPrices, setShowCostPrices] = useState({});
+  const [productCounts, setProductCounts] = useState({});
 
   const handleAddProducts = (product) => {
-    const existingProductIndex = cartProducts.findIndex((item) => item.id === product.id);
+    const existingProductIndex = cartProducts.findIndex((item) => item.id == product.id);
     const updatedCartProducts = [...cartProducts];
+    const selectedCount = productCounts[product.id] || 1;
+
     if (existingProductIndex !== -1) {
       updatedCartProducts[existingProductIndex].price += product.price * selectedCount;
-      updatedCartProducts[existingProductIndex].quantify += selectedCount;
+      updatedCartProducts[existingProductIndex].quantity += selectedCount;
     } else {
-      updatedCartProducts.push({ ...product, quantify: selectedCount, price: product.price * selectedCount });
+      updatedCartProducts.push({ ...product, quantity: selectedCount, price: product.price * selectedCount, unitPrice: product.price });
     }
     setCartProducts(updatedCartProducts);
-    console.log(cartProducts)
+    console.log(cartProducts);
+  };
+
+  const handleChangeCount = (productId, newCount) => {
+    setProductCounts({
+      ...productCounts,
+      [productId]: newCount,
+    });
   };
 
   const handleChangePrice = (productId, newPrice) => {
@@ -42,7 +52,7 @@ const ItemListContainer = ({ productsData }) => {
 
   const changePrice = async (productId) => {
     const db = getFirestore();
-    const productRef = doc(db, 'kioscoProducts', productId);
+    const productRef = doc(db, 'fake-database', productId);
     try {
       await updateDoc(productRef, {
         price: parseFloat(newPrices[productId]),
@@ -70,7 +80,7 @@ const ItemListContainer = ({ productsData }) => {
 
   const changeCostPrice = async (productId) => {
     const db = getFirestore();
-    const productRef = doc(db, 'kioscoProducts', productId);
+    const productRef = doc(db, 'fake-database', productId);
     try {
       await updateDoc(productRef, {
         cost: parseFloat(newCostPrices[productId]),
@@ -83,34 +93,40 @@ const ItemListContainer = ({ productsData }) => {
   };
 
   return (
-    <div className="d-flex flex-wrap">
+    <div className={`${styles["product-container"]}`}>
       {productsData &&
         productsData.map((item) => (
-          <div className={`${styles['card-container']} my-4 mx-2`} key={item.id}>
+          <div className={`${styles['card-container']} `} key={item.id}>
             <div className={`${styles['card-img']}`}>
-              <img src={item.img} alt="" />
+              <img src={item.img} alt="" /> 
             </div>
             <div className={`${styles['card-info']} d-flex flex-column`}>
-              <span className={`${styles['card-name']} `}>{item.name}</span>
-              <div className={`${styles['price-container']} d-flex `}>
+              <span className={`${styles['card-name']}`}>{item.name}</span>
+              <div className={`${styles['price-container']} d-flex`}>
                 <div className={`${styles['price-box']} me-2`}>
                   <span>${item.price}</span>
                 </div>
-                <div className="d-flex justify-content-center align-items-center" style={{ cursor: 'pointer' }}>
+                <div className="" style={{ cursor: 'pointer' }}>
                   <FontAwesomeIcon icon={faPenToSquare} onClick={() => toggleChangePrice(item.id)} size="xl" />
                 </div>
               </div>
-              <div className={`d-flex justify-content-center mt-1  ${styles['cost-container']}`}>
+
+              <div className={`d-flex justify-content-center mt-1 ${styles['cost-container']}`}>
                 <span className="me-2">C: ${item.cost} </span>
                 <div className="d-flex justify-content-center align-items-center" style={{ cursor: 'pointer' }}>
                   <FontAwesomeIcon icon={faPenToSquare} onClick={() => toggleChangeCostPrice(item.id)} size="lg" />
                 </div>
               </div>
+              
               <div>
-                <Count />
+                <Count
+                  count={productCounts[item.id] || 1}
+                  onChangeCount={(newCount) => handleChangeCount(item.id, newCount)}
+                />
               </div>
-              <button onClick={() => handleAddProducts(item)}>Añadir al carrito</button>
-              {showCostPrices[item.id] && (
+              <button onClick={() => handleAddProducts(item)} className={`${styles["add-button"]}`}>Agregar</button>
+
+               {showCostPrices[item.id] && (
                 <>
                   <input
                     type="number"
@@ -124,6 +140,7 @@ const ItemListContainer = ({ productsData }) => {
                   </span>
                 </>
               )}
+
               {showChangePrice[item.id] && (
                 <>
                   <div className="d-flex flex-column mt-2">
@@ -131,15 +148,16 @@ const ItemListContainer = ({ productsData }) => {
                       type="number"
                       value={newPrices[item.id] || ''}
                       onChange={(e) => handleChangePrice(item.id, e.target.value)}
-                      placeholder="Escribi el nuevo precio"
+                      placeholder="Precio"
                       className="mb-1"
                     />
                     <span onClick={() => changePrice(item.id)} className={`${styles['changep-button']}`}>
-                      Modificar PRECIO
+                      Cambiar Precio
                     </span>
                   </div>
                 </>
-              )}
+              )} 
+
             </div>
           </div>
         ))}

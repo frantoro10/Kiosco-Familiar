@@ -3,7 +3,7 @@
 .brand-container {
     background-color: black;
     color: rgb(77, 172, 255);
-    font-size: 2em !important;
+    font-size: 2rem ;
     img {
         width: 8%;
     }
@@ -19,3 +19,25 @@
 // .filter-container {
 //    border-left: 2px solid red !important;
 // }
+
+// Responsive
+
+// Phone
+
+@media (max-width: 720px) {
+    .brand-container {
+        font-size: 1.4rem;
+        img {
+            width: 25%;
+        }
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1800px) {
+    .brand-container {
+        font-size: 1.4rem;
+        img {
+            width: 10%;
+        }
+    }
+}

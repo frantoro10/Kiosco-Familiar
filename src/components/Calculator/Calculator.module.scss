@@ -1,17 +1,105 @@
 .calculator-icon {
     margin-top: 0.1em;
     width: 100%;
-    height: 2em;
-    object-fit: contain;
+    height: 4rem !important;
+    height: 2rem;
+    
 }
 
 .modal {
-    background-color: white;
-    width: 25%;
-    min-height: 95%;
-    max-height: 95%;
+    background-color: rgb(253, 253, 253);
+    width: 20%;
+    min-height: 97%;
+    max-height: 97%;
+    border: 0.1rem solid rgb(131, 128, 128);
+    border-radius: 1%;
+    overflow-x: scroll;
     position: absolute;
+    right: 0.8%;
     top: 1%;
-    right: 1%;
+}
 
+
+
+.calculator-product {
+    position: relative;
+    border: 0.1rem solid rgb(131, 128, 128);
+    border-radius: 3%;
+    width: 65%;
+    min-height: 18.5rem;
+    max-height: 18.5rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    .product-xIcon {
+        position: absolute;
+        top: 3%;
+        right: 4%;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    img {
+        
+        width: 70%;
+        min-height: 11rem;
+        max-height: 11rem;
+        object-fit: contain;
+    }
+    div {
+        margin-left: 1rem;
+        span {
+            font-size: 1.1rem;
+        }
+        span:nth-child(1) {
+            font-weight: 500;
+        }
+    }
+}
+
+.quantity-price {
+    color: rgb(9, 150, 37);
+}
+
+.total-price {
+   
+    p {
+        font-size: 2rem;
+        text-align: center;
+        span {
+            color: rgb(9, 150, 37);
+            font-weight: 500;
+        }
+        
+    }
+}
+
+
+// Phone
+
+@media (max-width: 720px) {
+    .modal {
+        width: 65% !important;
+    }
+}
+    .calculator-product {
+        width: 85%;
+
+        div {
+            span {
+                font-size: 1rem;
+            }
+            span:nth-child(1) {
+                font-weight: 500;
+            }
+        }
+    }
+
+// Notebook 1280px 
+
+@media (min-width: 720px) and (max-width: 1800px) {
+    .modal {
+        width: 30% !important;
+    }
 }

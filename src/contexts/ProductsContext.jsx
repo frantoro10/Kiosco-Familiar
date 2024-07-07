@@ -16,14 +16,18 @@ export const ProductsProvider = ({ children }) => {
     // selectedSortOption: ''  (En caso de que haga componente para ordenar mayor a menor viceversa.)
   })
 
+  const removeProductCart = (productId) => {
+    setCartProducts(cartProducts.filter(product => product.id !== productId))
+  }
+
+  // Get base de datos - firebase
   useEffect(() => {
-   const db = getFirestore(); // capturamos base de datos
-   const productsCollection = collection(db, "kioscoProducts") // Capturamos la coleccion de la base de datos, con el nombre creado en este caso "kioscoProducts"
+   const db = getFirestore();
+   const productsCollection = collection(db, "fake-database") 
     getDocs(productsCollection).then((snapshot) => {
       const productsData = snapshot.docs.map((doc) => ({id: doc.id, ...doc.data() }));
       setProducts(productsData);
     }).catch((error) => console.log(error)); 
-    // Utilizamos los metodos de firebase getDocs para consumir la base de datos, y usamos promesas de js y utilizamos map para iterar sobre los objetos del array y almacenarlos en el estado setProducts.
 
   }, []);
 
@@ -71,7 +75,7 @@ export const ProductsProvider = ({ children }) => {
 
   return (
     
-    <ProductsContext.Provider value={{ products, setProducts, filters, setFilters, filterProducts,setFilterProducts, cartProducts, setCartProducts, selectedCount,setSelectedCount }}> 
+    <ProductsContext.Provider value={{ products, setProducts, filters, setFilters, filterProducts,setFilterProducts, cartProducts, setCartProducts, selectedCount,setSelectedCount, removeProductCart }}> 
       {children}
     </ProductsContext.Provider>
   );

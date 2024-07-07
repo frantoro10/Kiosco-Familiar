@@ -13,7 +13,7 @@ const SearchBar = () => {
         // Almacenamos en search valor de la barra de busqueda
         const search = e.target.value.toLowerCase();
         // Filtrados el array de productos, los valores de la propiedad "name" que coincidan con el valor ingresado en "search"
-        const filteredProducts = products.filter((item) => item.name.toLowerCase().includes(search) || item.category.toLowerCase().includes(search) || item.subCategory.toLowerCase().includes(search));
+        const filteredProducts = products.filter((item) => item.name.toLowerCase().includes(search) || item.category.toLowerCase().includes(search));
         // Otra manera
         // const filteredProducts = products.filter((item) => {
         //     const regex = new RegExp(search.toLowerCase(), 'g');
@@ -32,7 +32,7 @@ const SearchBar = () => {
                         <Form.Control
                             onChange={searchProduct}
                             type="search"
-                            placeholder="Ingresa lo que quieras buscar"
+                            placeholder="Buscar"
                             aria-label="Search"
                             className={`${styles["search-input"]}`}
                         />

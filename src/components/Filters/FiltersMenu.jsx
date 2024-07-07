@@ -30,8 +30,8 @@ const FiltersMenu = () => {
                 // Si no hay ningún checkbox seleccionado, muestra todos los productos
                 return true;
             }
-            return selectedCheckboxes[item.category.toLowerCase()] || selectedCheckboxes[item.subCategory.toLowerCase()] ;
-        });      
+            return selectedCheckboxes[item.category.toLowerCase()]
+        });
 
         setFilterProducts(filteredProducts);
         console.log(filteredProducts)
@@ -40,73 +40,64 @@ const FiltersMenu = () => {
 
     return (
         <div>
-            <h2 className='fs-3 fw-light'>Filtrar productos</h2>
-            <div className={styles['filter-menu']}>
-                <h3>Dulces</h3>
-                {/* Primer Filtro por Marca */}
-                <ul>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="category" value="alfajores" onChange={filterCategory}  checked={selectedCheckboxes['alfajores'] || false}/>
-                            <span>Alfajores</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="category" value="galletas" onChange={filterCategory} checked={selectedCheckboxes['galletas'] || false} />
-                            <span>Galletas</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="category" value="memoria ram" onChange={filterCategory} checked={selectedCheckboxes['memoria ram'] || false} />
-                            <span>Turrones</span>
-                        </label>
-                    </li>
-                </ul>
-                {/* Segundo filtro por modelo */}
-                <h3>Bebidas</h3>
-                <ul>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="brand" value="cervezas" onChange={filterCategory} checked={selectedCheckboxes['cervezas'] || false}  />
-                            <span>Cervezas</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="brand" value="gaseosas" onChange={filterCategory} checked={selectedCheckboxes['gaseosas'] || false} />
-                            <span>Gaseosas</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="brand" value="corsair" onChange={filterCategory} checked={selectedCheckboxes['corsair'] || false} />
-                            <span>Latas de cerveza</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="checkbox" name="brand" value="intel" onChange={filterCategory} checked={selectedCheckboxes['intel'] || false} />
-                            <span>Latas de gaseosas</span>
-                        </label>
-                    </li>
-                    {/* <li>
-                        <label>
-                            <input type="checkbox" name="brand" value="adata" onChange={filterCategory} checked={selectedCheckboxes['adata'] || false} />
-                            Adata
-                        </label>
-                    </li> */}
-                </ul>
-            </div>
-
-            <div>
-                <h3>Precio</h3>
-                <input type="range" min="0" max="1000" step="10" value="900" id="precio-slider" />
-                <span id="precio-value">$50</span>
+            <div className={` d-flex flex-md-column flex-sm-row ${styles['filter-menu']}`}>
+                <label>
+                    <input className='ms-2' type="checkbox" name="category" value="kiosco" onChange={filterCategory} checked={selectedCheckboxes['kiosco'] || false} />
+                    <span>Kiosco</span>
+                </label>
+                <label>
+                    <input className='ms-2' type="checkbox" name="category" value="almacen" onChange={filterCategory} checked={selectedCheckboxes['almacen'] || false} />
+                    <span>Almacen</span>
+                </label>
+                <label>
+                    <input className='ms-2' type="checkbox" name="category" value="bebidas" onChange={filterCategory} checked={selectedCheckboxes['bebidas'] || false} />
+                    <span>Bebidas</span>
+                </label>
+                <label>
+                    <input className='ms-2' type="checkbox" name="category" value="lacteos" onChange={filterCategory} checked={selectedCheckboxes['lacteos'] || false} />
+                    <span>Lacteos</span>
+                </label>
+                <label>
+                    <input className='ms-2' type="checkbox" name="category" value="farmacia" onChange={filterCategory} checked={selectedCheckboxes['farmacia'] || false} />
+                    <span>Farmacia</span>
+                </label>
             </div>
         </div>
     )
 }
 
 export default FiltersMenu
+
+
+{/* <ul>
+<li>
+    <label>
+        <input type="checkbox" name="brand" value="cervezas" onChange={filterCategory} checked={selectedCheckboxes['cervezas'] || false}  />
+        <span>Cervezas</span>
+    </label>
+</li>
+<li>
+    <label>
+        <input type="checkbox" name="brand" value="gaseosas" onChange={filterCategory} checked={selectedCheckboxes['gaseosas'] || false} />
+        <span>Gaseosas</span>
+    </label>
+</li>
+<li>
+    <label>
+        <input type="checkbox" name="brand" value="corsair" onChange={filterCategory} checked={selectedCheckboxes['corsair'] || false} />
+        <span>Latas de cerveza</span>
+    </label>
+</li>
+<li>
+    <label>
+        <input type="checkbox" name="brand" value="intel" onChange={filterCategory} checked={selectedCheckboxes['intel'] || false} />
+        <span>Latas de gaseosas</span>
+    </label>
+</li>
+{/* <li>
+    <label>
+        <input type="checkbox" name="brand" value="adata" onChange={filterCategory} checked={selectedCheckboxes['adata'] || false} />
+        Adata
+    </label>
+</li> */}
+// </ul> */}

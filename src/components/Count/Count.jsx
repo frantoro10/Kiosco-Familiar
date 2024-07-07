@@ -1,25 +1,33 @@
-import React, {useContext} from 'react'
-import {ProductsContext} from '../../contexts/ProductsContext'
+import React, { useState, useEffect } from 'react';
 
-const Count = () => {
-    const {selectedCount, setSelectedCount} = useContext(ProductsContext);
+const Count = ({ count, onChangeCount }) => {
+    const [selectedCount, setSelectedCount] = useState(count);
+
+    useEffect(() => {
+        setSelectedCount(count);
+    }, [count]);
 
     const addCount = () => {
-        setSelectedCount (selectedCount + 1 )
-    }
+        const newCount = selectedCount + 1;
+        setSelectedCount(newCount);
+        onChangeCount(newCount);
+    };
 
     const lessCount = () => {
-        if (selectedCount > 1)
-        setSelectedCount( selectedCount - 1)
-    }
+        if (selectedCount > 1) {
+            const newCount = selectedCount - 1;
+            setSelectedCount(newCount);
+            onChangeCount(newCount);
+        }
+    };
 
     return (
-        <div>
-            <button onClick={addCount}>+</button>
+        <div className='mt-2'>
+            <button onClick={lessCount} className='me-2 mb-2'>-</button>
             {selectedCount}
-            <button onClick={lessCount}>-</button>
+            <button onClick={addCount} className="ms-2 mb-2">+</button>
         </div>
-    )
-}
+    );
+};
 
-export default Count
+export default Count;
