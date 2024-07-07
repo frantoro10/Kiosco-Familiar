@@ -1,6 +1,6 @@
 English:
 
-Responsive: React + Vite - Firebase - CSS-SASS - Bootstrap
+Responsive App: React + Vite - Firebase - CSS-SASS - Bootstrap
 
 Objective of the Application:
 Create a basic system to facilitate product sales in a small store.
@@ -32,7 +32,7 @@ The file uploaded to GitHub is a copy of the original, and the database is not t
 
 Spanish:
 
-Responsive: React + Vite - Firebase - CSS-SASS - Bootstrap
+Aplicación Responsive: React + Vite - Firebase - CSS-SASS - Bootstrap
 
 Objetivo de la aplicación:
 Crear un sistema básico que facilite la venta de productos en un pequeño negocio.
