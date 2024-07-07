@@ -12,6 +12,7 @@ Technologies Used:
 
 Front-end: JavaScript, React, Sass, CSS, Bootstrap.
 Back-end: Firebase (for database management).
+
 Functionalities:
 
 ItemListContainer: Product container on the homepage where all products are displayed.
@@ -21,6 +22,7 @@ Count: Counter to add a product by the selected quantity, multiplying the corres
 FiltersMenu: Filter menu to search by product category, making the search easier.
 SearchBar: Search bar to filter by product name using the Include method.
 Calculator: Calculator or shopping cart where all added products are displayed and summed.
+
 Front-end Design:
 Customized according to the client's preferences.
 
@@ -42,6 +44,7 @@ Tecnologías utilizadas:
 
 Front-end: JavaScript, React, Sass, CSS, Bootstrap.
 Back-end: Firebase (para el manejo de la base de datos).
+
 Funcionalidades:
 
 ItemListContainer: Contenedor de productos en la página de inicio, donde se muestran todos los productos.
@@ -51,6 +54,7 @@ Count: Contador para agregar un producto por la cantidad seleccionada, multiplic
 FiltersMenu: Menú de filtrado por categoría de producto para facilitar la búsqueda.
 SearchBar: Barra de búsqueda para filtrar por nombre de producto utilizando el método Include.
 Calculator: Calculadora o carrito de compras donde se muestran y se suman todos los productos agregados.
+
 Diseño del front-end:
 Personalizado según las preferencias del cliente.
 
