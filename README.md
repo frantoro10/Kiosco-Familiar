@@ -1,49 +1,40 @@
+# Front-End Responsive Mini-App (React)
+
 English:
 
-Responsive App: React + Vite - Firebase - CSS-SASS - Bootstrap
+Responsive Application: React + Vite - Firebase (Database) - CSS-SASS - Bootstrap
 
-Objective of the Application:
-Create a basic system to facilitate product sales in a small store.
+Application Objective:
+Create a basic system to facilitate product visualization for the owners of a small business (Kiosk).
 
 Motivation:
-My parents recently opened a small store. Although everything generally went well, they started having trouble remembering product prices when selling to customers. This led me to the idea of creating a simple application where they can store all their products and update their prices. The most useful functionality would be to add and sum the products that the customer requests in real-time, allowing for more precise and faster sales.
-
-Technologies Used:
-
-Front-end: JavaScript, React, Sass, CSS, Bootstrap.
-Back-end: Firebase (for database management).
+Some relatives opened a small business at the end of 2023. They started having trouble remembering which products they had and their prices when selling. They turned to me to create a simple site where they can view their products stored in the database, change their prices, and also filter by category and name to quickly find them when a customer asks for a product and check the price quickly.
 
 Functionalities:
 
 ItemListContainer: Product container on the homepage where all products are displayed.
-ChangePriceButton: Button to change product prices by performing a PUT request on the document-object in the database.
-ChangeCostButton: Similar to the ChangePriceButton, but focused on the purchase cost of the product.
+ChangePriceButton: Button to change the price of products, performing a PUT on the document-object in the database.
+ChangeCostButton: Similar to ChangePriceButton, but focused on the product's purchase cost.
 Count: Counter to add a product by the selected quantity, multiplying the corresponding price.
-FiltersMenu: Filter menu to search by product category, making the search easier.
+FiltersMenu: Menu for filtering by product category to facilitate the search.
 SearchBar: Search bar to filter by product name using the Include method.
-Calculator: Calculator or shopping cart where all added products are displayed and summed.
-
-Front-end Design:
+Calculator: Calculator or shopping cart where all added products are displayed and summed up.
+Front-End Design:
 Customized according to the client's preferences.
 
 Note:
-The file uploaded to GitHub is a copy of the original, and the database is not the same. Therefore, I called it "fake-database."
+The file uploaded to GitHub is a copy of the original, and the database is not the same. This project can continue to grow if the client wishes to add back-end functionalities and simultaneously launch the application for the public.
 
 
 Spanish:
 
-Aplicación Responsive: React + Vite - Firebase - CSS-SASS - Bootstrap
+Aplicación Responsive: React + Vite - Firebase (Base de datos) - CSS-SASS - Bootstrap
 
 Objetivo de la aplicación:
-Crear un sistema básico que facilite la venta de productos en un pequeño negocio.
+Crear un sistema básico que facilite la visualización de los productos para los dueños de un negocio (Kiosco) pequeño.
 
 Motivos:
-Mis padres han abierto un pequeño negocio recientemente. Aunque todo generalmente iba bien, comenzaron a tener problemas para recordar los precios de los productos a la hora de vender. Esto me llevó a la idea de crear una aplicación sencilla donde puedan almacenar todos sus productos y actualizar sus precios. La funcionalidad más útil sería la de agregar y sumar los productos que el cliente pide en el momento, permitiendo así vender con más precisión y rapidez.
-
-Tecnologías utilizadas:
-
-Front-end: JavaScript, React, Sass, CSS, Bootstrap.
-Back-end: Firebase (para el manejo de la base de datos).
+Unos parientes han abierto un pequeño negocio a finales de 2023. Comenzaron a tener problemas para recordar que productos tenian y sus precios a la hora de vender. Entonces recurrieron a mi para crear un sitio sencillo donde ellos puedan ver sus productos almacenados en la base de datos, poder cambiar su precio y además filtrar por categoria y nombre para poder encontrarlos rapidamente en caso de que un cliente los pida y ellos poder checkear el precio rapidamente.
 
 Funcionalidades:
 
@@ -59,4 +50,4 @@ Diseño del front-end:
 Personalizado según las preferencias del cliente.
 
 Nota:
-El archivo subido a GitHub es una copia del original, y la base de datos no es la misma. Por eso, la he llamado "fake-database."
+El archivo subido a GitHub es una copia del original, y la base de datos no es la misma. Este proyecto puede seguir en crecimiento en caso de que el cliente desee agregar funcionalidades back-end y al mismo tiempo lanzar la aplicación para todo publico.
