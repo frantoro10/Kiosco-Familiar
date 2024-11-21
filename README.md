@@ -7,10 +7,7 @@ English:
 Responsive Application: React + Vite - Firebase (Database) - CSS-SASS - Bootstrap
 
 Application Objective:
-Create a basic system to facilitate product visualization for the owners of a small business (Kiosk).
-
-Motivation:
-Some relatives opened a small business at the end of 2023. They started having trouble remembering which products they had and their prices when selling. They turned to me to create a simple site where they can view their products stored in the database, change their prices, and also filter by category and name to quickly find them when a customer asks for a product and check the price quickly.
+Create a basic system to facilitate product visualization
 
 Functionalities:
 
@@ -33,10 +30,7 @@ Spanish:
 Aplicación Responsive: React + Vite - Firebase (Base de datos) - CSS-SASS - Bootstrap
 
 Objetivo de la aplicación:
-Crear un sistema básico que facilite la visualización de los productos para los dueños de un negocio (Kiosco) pequeño.
-
-Motivos:
-Unos parientes han abierto un pequeño negocio a finales de 2023. Comenzaron a tener problemas para recordar que productos tenian y sus precios a la hora de vender. Entonces recurrieron a mi para crear un sitio sencillo donde ellos puedan ver sus productos almacenados en la base de datos, poder cambiar su precio y además filtrar por categoria y nombre para poder encontrarlos rapidamente en caso de que un cliente los pida y ellos poder checkear el precio rapidamente.
+Crear un sistema básico que facilite la visualización de los productos del negocio
 
 Funcionalidades:
 
